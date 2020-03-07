@@ -22,6 +22,85 @@ class Login extends Component {
         })
     }
     render() {
-
+        return (
+            <div className='login-container'>
+              <Formik
+                initialValues={{ name: '', password: '' }}
+                onSubmit={this.getLogin}
+              >
+                {({ handleSubmit }) => (
+                  <Form
+                    onSubmit={handleSubmit}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-around',
+                      marginTop: '20px'
+                    }}
+                  >
+                    <div className='Container'>
+                      <div id='login'>
+                        <Field
+                          type='text'
+                          id='inputName'
+                          name='name'
+                          placeholder='name'
+                        />
+                        <Field
+                          type='password'
+                          id='inputPassword'
+                          name='password'
+                          placeholder='password'
+                        />
+                      </div>
+                      <div id='buttonsLoginContainer'>
+                        <div className='createAccount'>
+                          <Link
+                            id='buttonCreateAccount'
+                            className='buttonLogin'
+                            to='/register'
+                          >
+                            Create Account
+                          </Link>
+                        </div>
+                        {!this.props.isLoading ? (
+                          <button
+                            type='submit'
+                            id='buttonLogin'
+                            className='buttonLogin'
+                          >
+                            Log In
+                          </button>
+                        ) : (
+                          <ClipLoader size={75} color={'white'} loading />
+                        )}
+                        <div>
+                          {this.props.failedLogin ? (
+                            <div id='bad-credentials'>BAD CREDENTIALS</div>
+                          ) : null}
+                        </div>
+                      </div>
+                    </div>
+                  </Form>
+                )}
+              </Formik>
+            </div>
+          )
     }
 }
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+      users: state.users,
+      isLoading: state.users.isLoading,
+      isAuth: state.users.isAuth,
+      failedLogin: state.users.failedLogin
+    }
+}
+  
+  const mapDispatchToProps = dispatch => {
+    return bindActionCreators({ loginAccount }, dispatch)
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Login)
+  
