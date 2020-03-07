@@ -9,5 +9,28 @@ class Products extends Component {
     this.props.fetchProducts()
   }
 
-  render() {}
+  render() {
+    const productItems = this.props.products.map(product => (
+      <div className='col-md-4' key={product.id}>
+        <div className='thumbnail text-center'>
+          <a
+            href={`#${product._id}`}
+            onClick={() => this.props.addToCart(this.props.cartItems, product)}
+          >
+            <img src={product.photo} alt='photo' />
+            <p>{product.title}</p>
+          </a>
+          <b>{util.formatCurrency(product.price)}</b>
+          <button
+            className='btn btn-primary'
+            onClick={() => this.props.addToCart(this.props.cartItems, product)}
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+    ))
+
+    return <div className='row'>{productItems}</div>
+  }
 }
