@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import util from '../helpers/util'
+import util from '../helpers/utils'
 import { connect } from 'react-redux'
 import { removeFromCart } from '../redux/actions/cartActions'
 
@@ -40,9 +40,7 @@ class Basket extends Component {
                 cartItems.reduce((a, c) => a + c.price * c.count, 0)
               )}
             </b>
-            <button onClick={} className='btn btn-primary'>
-              checkout
-            </button>
+            <button className='btn btn-primary'>checkout</button>
           </div>
         )}
       </div>
@@ -58,4 +56,4 @@ const mapDispatchToProps = {
   removeFromCart
 }
 
-export default connect(mapStateToProps, mapDispatchToProps(Basket))
+export default connect(mapStateToProps, mapDispatchToProps)(Basket)
