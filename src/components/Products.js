@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import util from '../helpers/util'
+import util from '../helpers/utils'
 import { connect } from 'react-redux'
 import { fetchProducts } from '../redux/actions/productActions'
 import { addToCart } from '../redux/actions/cartActions'
