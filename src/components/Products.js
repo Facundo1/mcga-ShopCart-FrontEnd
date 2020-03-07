@@ -34,3 +34,15 @@ class Products extends Component {
     return <div className='row'>{productItems}</div>
   }
 }
+
+const mapStateToProps = state => ({
+  products: state.products.items,
+  cartItems: state.cart.items
+})
+
+const mapDispatchToProps = {
+  addToCart,
+  fetchProducts
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products)
