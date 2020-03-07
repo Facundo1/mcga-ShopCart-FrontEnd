@@ -58,6 +58,15 @@ export default function(state = initialState, action){
                 ...state,
                 isLoading: true
             }
+        case ADD_USER_SUCCESS: {
+            const newUser = action.payload.user
+            const user = [...state.users, newUser]
+            return {
+                ...state,
+                isLoading: false,
+                users: user
+            }
+        }
         default:
            return state
     }
