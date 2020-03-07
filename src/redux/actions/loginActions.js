@@ -3,7 +3,11 @@ import {
     LOGIN_USER_SUCCESS,
     LOGIN_USER_PENDING,
     IS_AUTH,
-    USER_LOGOUT
+    USER_LOGOUT,
+    FETCH_USERS,
+    ADD_USER_PENDING,
+    ADD_USER_SUCCESS,
+    ADD_USER_ERROR
 } from './types'
 
 export const loginAccount = data => {
@@ -49,9 +53,17 @@ export const isAuth = isAuth => {
       payload: isAuth
     }
 }
-
+//LOGOUT
 export const logOut = dispatch => {
     return {
       type: USER_LOGOUT
     }
 }
+//GET USERS
+export const fetchUser = () => dispatch => {
+  fetch('http://localhost:5000/api/user/')
+    .then(res => res.json())
+    .then(data => {
+      return dispatch({ type: FETCH_USERS, payload: data });
+    });
+};
