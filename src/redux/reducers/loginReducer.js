@@ -41,6 +41,13 @@ export default function(state = initialState, action){
                 token: action.payload.token,
                 isAuth: true
             }
+        case LOGIN_USER_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                message: action.payload,
+                failedLogin: true
+            }
         default:
            return state;
     }
