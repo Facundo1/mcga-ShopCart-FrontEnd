@@ -33,3 +33,15 @@ class PublicHome extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    products: state.products,
+    isLoading: state.isLoading,
+    isAuth: state.isAuth
+  }
+}
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PublicHome)
