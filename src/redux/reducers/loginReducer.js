@@ -48,7 +48,12 @@ export default function(state = initialState, action){
                 message: action.payload,
                 failedLogin: true
             }
+        case FETCH_USERS:
+            return {
+                ...state,
+                users: action.payload
+            }
         default:
-           return state;
+           return state
     }
 }
