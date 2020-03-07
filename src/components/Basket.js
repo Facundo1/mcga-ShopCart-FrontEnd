@@ -51,12 +51,11 @@ class Basket extends Component {
 }
 
 const mapStateToProps = state => ({
-    cartItems : state.cart.items
- })
+  cartItems: state.cart.items
+})
 
- const mapDispatchToProps = {
-     removeFromCart
- }
- 
- 
- export default connect(mapStateToProps, mapDispatchToProps(Basket)
+const mapDispatchToProps = {
+  removeFromCart
+}
+
+export default connect(mapStateToProps, mapDispatchToProps(Basket))
