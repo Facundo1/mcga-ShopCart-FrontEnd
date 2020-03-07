@@ -28,6 +28,12 @@ export default function(state = initialState, action){
             return {
                 state: initialState
             }
+        case LOGIN_USER_PENDING:
+            return {
+                ...state,
+                isLoading: true,
+                failedLogin: false
+            }
         default:
            return state;
     }
