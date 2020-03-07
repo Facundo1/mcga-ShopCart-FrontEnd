@@ -2,7 +2,8 @@ import {
     LOGIN_USER_ERROR,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_PENDING,
-    IS_AUTH
+    IS_AUTH,
+    USER_LOGOUT
 } from './types'
 
 export const loginAccount = data => {
@@ -46,5 +47,11 @@ export const isAuth = isAuth => {
     return {
       type: IS_AUTH,
       payload: isAuth
+    }
+}
+
+export const logOut = dispatch => {
+    return {
+      type: USER_LOGOUT
     }
 }
