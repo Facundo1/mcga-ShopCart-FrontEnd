@@ -29,3 +29,14 @@ class Filter extends Component {
     )
   }
 }
+const mapStateToProps = state => ({
+  products: state.products.items,
+  filteredProducts: state.products.filteredItems,
+  sort: state.products.sort
+})
+
+const mapDispatchToProps = {
+  sortProducts
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter)
