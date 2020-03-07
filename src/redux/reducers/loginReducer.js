@@ -53,6 +53,11 @@ export default function(state = initialState, action){
                 ...state,
                 users: action.payload
             }
+        case ADD_USER_PENDING:
+            return {
+                ...state,
+                isLoading: true
+            }
         default:
            return state
     }
