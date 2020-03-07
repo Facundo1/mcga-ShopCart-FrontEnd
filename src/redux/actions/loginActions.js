@@ -64,6 +64,45 @@ export const fetchUser = () => dispatch => {
   fetch('http://localhost:5000/api/user/')
     .then(res => res.json())
     .then(data => {
-      return dispatch({ type: FETCH_USERS, payload: data });
-    });
-};
+      return dispatch({ type: FETCH_USERS, payload: data })
+    })
+}
+//POST USERS
+export const postUser = user => {
+  return dispatch => {
+    dispatch({
+      type: ADD_USER_PENDING
+    })
+
+    const options = {
+      timeout: 25000,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    }
+    console.log('options', options)
+    return fetch(`http://localhost:5000/api/user`, options)
+      .then(res => res.json())
+      .then(data => {
+        console.log('POST USER', data)
+        if (!Object.entries(data).length) {
+          return Promise.reject(data)
+        }
+
+        return dispatch({
+          type: ADD_USER_SUCCESS,
+          payload: {
+            user: data
+          }
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          type: ADD_USER_ERROR,
+          payload: error
+        })
+      })
+  }
+}
