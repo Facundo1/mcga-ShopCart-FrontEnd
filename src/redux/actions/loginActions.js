@@ -40,11 +40,11 @@ export const loginAccount = data => {
           }
         })
     }
-  }
+}
 
-  export const isAuth = isAuth => {
+export const isAuth = isAuth => {
     return {
       type: IS_AUTH,
       payload: isAuth
     }
-  }
+}
