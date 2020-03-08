@@ -18,4 +18,29 @@ class Home extends Component {
       price: productToUpdate.price
     }
   }
+  render() {
+    return ( 
+    <div className='container'>
+    <h1>---Admin panel---</h1>
+    {this.props.isAuth ? (
+      <div className='logged'>
+        <div>Admin session</div>
+        <div className='buttonmenu'>
+          <Link to='/login' onClick={this.props.logOut}>
+            Logout
+          </Link>
+        </div>
+      </div>
+    ) : (
+      <div id='login2'>
+        <div className='buttonmenu'>
+          <Link to='/register'>Sign up</Link>
+        </div>
+        <div className='buttonmenu'>
+          <Link to='/login'>Login</Link>
+        </div>
+      </div>
+    )}
+    <hr />)
+  }
 }
