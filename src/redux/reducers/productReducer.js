@@ -37,6 +37,13 @@ export default function(state = initialState, action) {
         items: products
       }
     }
+    case ADD_PRODUCT_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.error,
+        message: action.payload.message
+      }
 
     default:
       return state
