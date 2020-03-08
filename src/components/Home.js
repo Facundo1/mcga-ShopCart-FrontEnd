@@ -92,6 +92,54 @@ class Home extends Component {
           <div className='col-md-8'>
             <ProductsHandler />
           </div>
+          <div className='col-md-4'>
+            <h4>Update product</h4>
+            <Formik
+              initialValues={
+                !this.props.productSelected
+                  ? {
+                      title: '',
+                      description: '',
+                      availableSize: '',
+                      price: 0
+                    }
+                  : this.capturarDatos()
+              }
+              onSubmit={values => {
+                this.props.updateProduct({
+                  ...values,
+                  _id: this.props.productSelected
+                })
+              }}
+            >
+              {({ handleSubmit }) => (
+                <Form
+                  onSubmit={handleSubmit}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-around',
+                    marginTop: '40px',
+                    border: '2px solid'
+                  }}
+                >
+                  <Field type='text' name='title' placeholder='tittle' />
+                  <Field
+                    type='text'
+                    name='description'
+                    placeholder='description'
+                  />
+                  <Field
+                    type='text'
+                    name='availableSize'
+                    placeholder='availableSize'
+                  />
+                  <Field type='number' name='price' placeholder='price' />
+                  <button type='submit'>Submit</button>
+                </Form>
+              )}
+            </Formik>
+          </div>
     )
   }
 }
