@@ -23,6 +23,12 @@ export default function(state = initialState, action) {
         sort: action.payload.sort,
         items: action.payload.items
       }
+    case ADD_PRODUCT_PENDING:
+      return {
+        ...state,
+        isLoading: true
+      }
+
     default:
       return state
   }
