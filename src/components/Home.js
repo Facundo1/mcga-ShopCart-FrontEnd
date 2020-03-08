@@ -19,30 +19,30 @@ class Home extends Component {
     }
   }
   render() {
-    return ( 
-    <div className='container'>
-    <h1>---Admin panel---</h1>
-    {this.props.isAuth ? (
-      <div className='logged'>
-        <div>Admin session</div>
-        <div className='buttonmenu'>
-          <Link to='/login' onClick={this.props.logOut}>
-            Logout
-          </Link>
-        </div>
-      </div>
-    ) : (
-      <div id='login2'>
-        <div className='buttonmenu'>
-          <Link to='/register'>Sign up</Link>
-        </div>
-        <div className='buttonmenu'>
-          <Link to='/login'>Login</Link>
-        </div>
-      </div>
-    )}
-    <hr />
-    <div className='row'>
+    return (
+      <div className='container'>
+        <h1>---Admin panel---</h1>
+        {this.props.isAuth ? (
+          <div className='logged'>
+            <div>Admin session</div>
+            <div className='buttonmenu'>
+              <Link to='/login' onClick={this.props.logOut}>
+                Logout
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <div id='login2'>
+            <div className='buttonmenu'>
+              <Link to='/register'>Sign up</Link>
+            </div>
+            <div className='buttonmenu'>
+              <Link to='/login'>Login</Link>
+            </div>
+          </div>
+        )}
+        <hr />
+        <div className='row'>
           <div>
             <h4>Add new product ↓</h4>
             <div className='form-container'>
@@ -140,6 +140,8 @@ class Home extends Component {
               )}
             </Formik>
           </div>
+        </div>
+      </div>
     )
   }
 }
