@@ -48,7 +48,6 @@ export const sortProducts = (products, sort) => dispatch => {
 }
 
 //POST PRODUCTS
-//POST PRODUCTOS
 export const postProduct = product => {
   return dispatch => {
     dispatch({
