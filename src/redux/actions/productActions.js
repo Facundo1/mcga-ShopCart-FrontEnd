@@ -87,3 +87,42 @@ export const postProduct = product => {
       })
   }
 }
+
+//UPDATE PRODUCTS
+export const updateProduct = product => {
+  console.log(product)
+  return dispatch => {
+    dispatch({
+      type: UPDATE_PRODUCT_PENDING
+    })
+
+    const options = {
+      timeout: 25000,
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ product })
+    }
+
+    return fetch(`http://localhost:5000/api/product/${product._id}`, options)
+      .then(res => res.json())
+      .then(data => {
+        console.log('UPDATE PRODUCT', data)
+        if (!Object.entries(data).length) {
+          return Promise.reject(data)
+        }
+
+        return dispatch({
+          type: UPDATE_PRODUCT_SUCCESS,
+          payload: data
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          type: UPDATE_PRODUCT_ERROR,
+          payload: error
+        })
+      })
+  }
+}
