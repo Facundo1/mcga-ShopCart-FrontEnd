@@ -41,6 +41,54 @@ class Home extends Component {
         </div>
       </div>
     )}
-    <hr />)
+    <hr />
+    <div className='row'>
+          <div>
+            <h4>Add new product ↓</h4>
+            <div className='form-container'>
+              <Formik
+                initialValues={{
+                  id: '',
+                  photo: 'https://via.placeholder.com/150',
+                  title: '',
+                  description: '',
+                  availableSize: '',
+                  price: 0
+                }}
+                onSubmit={values => {
+                  this.props.postProduct(values)
+                }}
+              >
+                {({ handleSubmit }) => (
+                  <Form
+                    onSubmit={handleSubmit}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'space-around',
+                      marginTop: '20px',
+                      border: '2px solid'
+                    }}
+                  >
+                    <Field type='text' name='id' placeholder='code' />
+                    <Field type='text' name='title' placeholder='tittle' />
+                    <Field
+                      type='text'
+                      name='description'
+                      placeholder='description'
+                    />
+                    <Field
+                      type='text'
+                      name='availableSize'
+                      placeholder='availableSize'
+                    />
+                    <Field type='number' name='price' placeholder='price' />
+                    <button type='submit'>Submit</button>
+                  </Form>
+                )}
+              </Formik>
+            </div>
+          </div>
+    )
   }
 }
