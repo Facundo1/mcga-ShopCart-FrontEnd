@@ -145,3 +145,21 @@ class Home extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    products: state.products.items,
+    isLoading: state.isLoading,
+    isAuth: state.isAuth,
+    productSelected: state.products.productSelected
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    { postProduct, updateProduct, isAuth, logOut },
+    dispatch
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
