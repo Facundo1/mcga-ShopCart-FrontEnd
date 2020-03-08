@@ -3,6 +3,7 @@ import Basket from '../components/Basket'
 import Filter from '../components/Filter'
 import Products from './Products'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 
 class PublicHome extends Component {
@@ -42,6 +43,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({}, dispatch)
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(PublicHome)
