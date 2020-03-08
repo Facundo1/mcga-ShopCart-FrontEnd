@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import util from '../helpers/utils'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { fetchProducts } from '../redux/actions/productActions'
 import { addToCart } from '../redux/actions/cartActions'
 
@@ -40,9 +41,8 @@ const mapStateToProps = state => ({
   cartItems: state.cart.items
 })
 
-const mapDispatchToProps = {
-  addToCart,
-  fetchProducts
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ addToCart, fetchProducts }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products)
