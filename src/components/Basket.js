@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import util from '../helpers/utils'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { removeFromCart } from '../redux/actions/cartActions'
 
 class Basket extends Component {
@@ -52,8 +53,8 @@ const mapStateToProps = state => ({
   cartItems: state.cart.items
 })
 
-const mapDispatchToProps = {
-  removeFromCart
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ removeFromCart }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Basket)
