@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import util from '../helpers/util'
+import util from '../helpers/utils'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import {
   fetchProducts,
   deleteProduct,
@@ -44,3 +45,17 @@ class ProductsHandler extends Component {
     return <div className='row'>{productItems}</div>
   }
 }
+
+const mapStateToProps = state => ({
+  products: state.products.items,
+  cartItems: state.cart.items
+})
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    { fetchProducts, addToCart, deleteProduct, setProductOnForm },
+    dispatch
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsHandler)
