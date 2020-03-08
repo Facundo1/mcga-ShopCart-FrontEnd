@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { filterProducts, sortProducts } from '../redux/actions/productActions'
+import { bindActionCreators } from 'redux'
+import { sortProducts } from '../redux/actions/productActions'
 
 class Filter extends Component {
   render() {
@@ -35,8 +36,8 @@ const mapStateToProps = state => ({
   sort: state.products.sort
 })
 
-const mapDispatchToProps = {
-  sortProducts
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ sortProducts }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter)
