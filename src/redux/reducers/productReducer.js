@@ -28,6 +28,15 @@ export default function(state = initialState, action) {
         ...state,
         isLoading: true
       }
+    case ADD_PRODUCT_SUCCESS: {
+      const newProduct = action.payload.product.data
+      const products = [...state.items, newProduct]
+      return {
+        ...state,
+        isLoading: false,
+        items: products
+      }
+    }
 
     default:
       return state
