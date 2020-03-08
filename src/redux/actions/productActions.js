@@ -7,10 +7,12 @@ import {
   UPDATE_PRODUCT_PENDING,
   UPDATE_PRODUCT_SUCCESS,
   UPDATE_PRODUCT_ERROR,
+  SET_SELECTED_PRODUCT_ID,
   DELETE_PRODUCT_PENDING,
   DELETE_PRODUCT_SUCCESS,
   DELETE_PRODUCT_ERROR
 } from './types'
+import store from '../store'
 
 //FETCH PRODUCTS
 export const fetchProducts = () => dispatch => {
@@ -124,5 +126,15 @@ export const updateProduct = product => {
           payload: error
         })
       })
+  }
+}
+
+//SET PRODUCT
+export const setProductOnForm = _id => {
+  return dispatch => {
+    dispatch({
+      type: SET_SELECTED_PRODUCT_ID,
+      payload: _id
+    })
   }
 }
