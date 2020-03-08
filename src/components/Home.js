@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { postProduct, updateProduct } from '../redux/actions/productActions'
 import { Formik, Form, Field } from 'formik'
 import { Link } from 'react-router-dom'
 import { isAuth, logOut } from '../redux/actions/loginActions'
+import ProductsHandler from '../components/ProductHandler'
 
 class Home extends Component {
   capturarDatos() {
