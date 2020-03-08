@@ -89,6 +89,9 @@ class Home extends Component {
               </Formik>
             </div>
           </div>
+          <div className='col-md-8'>
+            <ProductsHandler />
+          </div>
     )
   }
 }
