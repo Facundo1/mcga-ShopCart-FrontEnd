@@ -7,3 +7,35 @@ h2 {
     text-align: center;
     color: white;
 }
+
+#inputUser {
+    margin: 5px;
+    width: 400px;
+    font-weight: bolder;
+    font-size: 25px;
+    border-radius: 12px;
+}
+
+#inputEmail {
+    margin: 5px;
+    width: 400px;
+    font-size: 25px;
+    border-radius: 12px;
+    font-weight: bolder;
+}
+
+#inputPassword {
+    margin: 5px;
+    width: 400px;
+    font-size: 25px;
+    border-radius: 12px;
+    font-weight: bolder;
+}
+
+#inputAddress {
+    margin: 5px;
+    width: 400px;
+    font-size: 25px;
+    border-radius: 12px;
+    font-weight: bolder;
+}
