@@ -17,3 +17,19 @@
     height: 65px;
     border-radius: 5px;
 }
+
+#inputName {
+    margin: 5px;
+    width: 400px;
+    font-weight: bolder;
+    font-size: 25px;
+    border-radius: 12px;
+}
+  
+#inputPassword {
+    margin: 5px;
+    width: 400px;
+    font-size: 25px;
+    border-radius: 12px;
+    font-weight: bolder;
+}
