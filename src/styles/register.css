@@ -1,0 +1,9 @@
+.wrapper {
+    background-image: url(.././assests/registerVector.jpg);
+    height: 688px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
