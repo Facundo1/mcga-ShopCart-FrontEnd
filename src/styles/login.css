@@ -20,16 +20,70 @@
 
 #inputName {
     margin: 5px;
-    width: 400px;
+    width: 350px;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 18px;
     border-radius: 12px;
 }
   
 #inputPassword {
     margin: 5px;
-    width: 400px;
-    font-size: 25px;
+    width: 350px;
+    font-size: 18px;
     border-radius: 12px;
     font-weight: bolder;
 }
+
+#buttonsLoginContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+
+#buttonCreateAccount {
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 11px;
+    font-size: 20px;
+    width: 160px;
+    margin: 20px;
+
+}
+#buttonCreateAccount:hover {
+    background-color: rgb(200, 200, 200);
+    color: black;
+}
+#createAccount {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-weight: bold;
+    border: 2px solid;
+}
+.buttonLogin {
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 45px;
+}
+.buttonLogin:hover {
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    font-weight: bold;
+    background-color: rgb(200, 200, 200);
+    color: black;
+    border-radius: 6px;
+  
+    font-weight: bold;
+    margin-right: 45px;
+  }
+  
