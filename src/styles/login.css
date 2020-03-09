@@ -85,5 +85,11 @@
   
     font-weight: bold;
     margin-right: 45px;
-  }
+}
+#bad-credentials {
+    display: flex;
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+}
   
