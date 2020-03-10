@@ -1,0 +1,73 @@
+.wrapper {
+    background-image: url(.././assests/registerVector.jpg);
+    height: 688px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+#inputUser {
+    margin: 5px;
+    width: 350px;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+#inputEmail {
+    margin: 5px;
+    width: 350px;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+#inputPassword {
+    margin: 5px;
+    width: 350px;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+#inputAddress {
+    margin: 5px;
+    width: 350px;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+#submitButton {
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: bold;
+    margin-right: 45px;
+    margin: 10px;
+}
+
+#container-back-to-login {
+    display: flex;
+    justify-content: center;
+}
+
+#back-to-login {
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: bold;  
+    text-decoration: none;
+    margin: 5px;
+}

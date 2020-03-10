@@ -11,6 +11,7 @@ import {
   DELETE_PRODUCT_SUCCESS,
   DELETE_PRODUCT_ERROR,
   SET_SELECTED_PRODUCT_ID
+
 } from '../actions/types'
 
 const initialState = {
@@ -70,8 +71,8 @@ export default function(state = initialState, action) {
       const productToUpdate = newProductUpdate.findIndex(
         ele => ele._id === action.payload._id
       )
-
       newProductUpdate.splice(productToUpdate, 1, action.payload)
+
       return {
         ...state,
         isLoading: false,

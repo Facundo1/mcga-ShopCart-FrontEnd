@@ -1,0 +1,104 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px;
+    width: auto;
+    height: 688px;
+    background-image: url('../assests/registerVector.jpg');
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    width: 45px;
+    height: 65px;
+    border-radius: 5px;
+}
+
+#inputName {
+    margin: 5px;
+    width: 350px;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 12px;
+}
+  
+#inputPassword {
+    margin: 5px;
+    width: 350px;
+    font-size: 18px;
+    border-radius: 12px;
+    font-weight: bolder;
+}
+
+#buttonsLoginContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+
+#buttonCreateAccount {
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 11px;
+    font-size: 20px;
+    width: 160px;
+    margin: 20px;
+
+}
+#buttonCreateAccount:hover {
+    background-color: rgb(200, 200, 200);
+    color: black;
+}
+#createAccount {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-weight: bold;
+    border: 2px solid;
+}
+.buttonLogin {
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 45px;
+}
+.buttonLogin:hover {
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    font-weight: bold;
+    background-color: rgb(200, 200, 200);
+    color: black;
+    border-radius: 6px;
+  
+    font-weight: bold;
+    margin-right: 45px;
+}
+#bad-credentials {
+    display: flex;
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+}
+
+@media(max-width:522px) {
+    #buttonsLoginContainer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 3px;
+    }
+}
