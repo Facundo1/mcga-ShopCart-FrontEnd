@@ -28,7 +28,7 @@ export const loginAccount = data => {
         password: document.getElementById('inputPassword').value
       })
     }
-    return fetch(`http://localhost:${port}/api/user/signIn`, options)
+    return fetch(`http://ecommerce-cart.herokuapp.com/api/user/signIn`, options)
       .then(res => res.json())
       .then(res => {
         if (res.msg !== 'Invalid Email or password') {
@@ -64,7 +64,7 @@ export const logOut = dispatch => {
 
 //GET USERS
 export const fetchUser = () => dispatch => {
-  fetch(`http://localhost:${port}/api/user/`)
+  fetch(`http://ecommerce-cart.herokuapp.com/api/user/`)
     .then(res => res.json())
     .then(data => {
       return dispatch({ type: FETCH_USERS, payload: data })
@@ -86,7 +86,7 @@ export const postUser = user => {
       body: JSON.stringify(user)
     }
     console.log('options', options)
-    return fetch(`http://localhost:${port}/api/user`, options)
+    return fetch(`http://ecommerce-cart.herokuapp.com/api/user`, options)
       .then(res => res.json())
       .then(data => {
         console.log('POST USER', data)
