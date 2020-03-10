@@ -101,6 +101,7 @@ class Home extends Component {
                 !this.props.productSelected
                   ? {
                       title: '',
+                      photo: 'https://via.placeholder.com/150',                     
                       description: '',
                       availableSize: '',
                       price: 0
