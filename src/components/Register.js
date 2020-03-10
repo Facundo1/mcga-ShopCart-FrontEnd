@@ -2,6 +2,7 @@ import '../styles/register.css'
 import React, { Component } from 'react'
 import { Formik, Form, Field } from 'formik'
 import { Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { postUser } from '../redux/actions/loginActions'
 
