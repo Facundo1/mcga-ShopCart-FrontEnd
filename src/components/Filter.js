@@ -30,6 +30,7 @@ class Filter extends Component {
     )
   }
 }
+
 const mapStateToProps = state => ({
   products: state.products.items,
   filteredProducts: state.products.filteredItems,

@@ -11,7 +11,6 @@ import {
   DELETE_PRODUCT_SUCCESS,
   DELETE_PRODUCT_ERROR,
   SET_SELECTED_PRODUCT_ID
-
 } from './types'
 import store from '../store'
 
@@ -76,7 +75,6 @@ export const postProduct = product => {
         if (!Object.entries(data).length) {
           return Promise.reject(data)
         }
-
         return dispatch({
           type: ADD_PRODUCT_SUCCESS,
           payload: {
@@ -100,7 +98,6 @@ export const updateProduct = product => {
     dispatch({
       type: UPDATE_PRODUCT_PENDING
     })
-
     const {
       users: { token }
     } = store.getState()
@@ -111,11 +108,8 @@ export const updateProduct = product => {
         'Content-Type': 'application/json',
         Authorization: `BEARER ${token}`
       },
-
       body: JSON.stringify({ ...product })
-
     }
-
     return fetch(`http://localhost:5000/api/product/${product._id}`, options)
       .then(res => res.json())
       .then(data => {
@@ -123,12 +117,9 @@ export const updateProduct = product => {
         if (!Object.entries(data).length) {
           return Promise.reject(data)
         }
-
         return dispatch({
           type: UPDATE_PRODUCT_SUCCESS,
-
           payload: product
-
         })
       })
       .catch(error => {
@@ -156,7 +147,6 @@ export const deleteProduct = code => {
     dispatch({
       type: DELETE_PRODUCT_PENDING
     })
-
     const {
       users: { token }
     } = store.getState()
@@ -168,7 +158,6 @@ export const deleteProduct = code => {
         Authorization: `BEARER ${token}`
       }
     }
-
     return fetch(`http://localhost:5000/api/product/${code}`, options)
       .then(res => res.json())
       .then(data => {
@@ -176,7 +165,6 @@ export const deleteProduct = code => {
         if (!Object.entries(data).length) {
           return Promise.reject(data)
         }
-
         return dispatch({
           type: DELETE_PRODUCT_SUCCESS,
           payload: data

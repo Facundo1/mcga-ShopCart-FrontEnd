@@ -16,7 +16,6 @@ class ProductsHandler extends Component {
 
   render() {
     const productItems = this.props.products.map(product => (
-
       <div className='col-md-4' key={product._id}>
         <div className='thumbnail text-center'>
           <a
@@ -42,7 +41,6 @@ class ProductsHandler extends Component {
         </div>
       </div>
     ))
-
     return <div className='row'>{productItems}</div>
   }
 }

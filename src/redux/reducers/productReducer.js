@@ -11,7 +11,6 @@ import {
   DELETE_PRODUCT_SUCCESS,
   DELETE_PRODUCT_ERROR,
   SET_SELECTED_PRODUCT_ID
-
 } from '../actions/types'
 
 const initialState = {
@@ -31,17 +30,20 @@ export default function(state = initialState, action) {
         filteredItems: action.payload,
         adminActions: false
       }
+
     case ORDER_PRODUCTS_BY_PRICE:
       return {
         ...state,
         sort: action.payload.sort,
         items: action.payload.items
       }
+
     case ADD_PRODUCT_PENDING:
       return {
         ...state,
         isLoading: true
       }
+
     case ADD_PRODUCT_SUCCESS: {
       const newProduct = action.payload.product.data
       const products = [...state.items, newProduct]
@@ -51,6 +53,7 @@ export default function(state = initialState, action) {
         items: products
       }
     }
+
     case ADD_PRODUCT_ERROR:
       return {
         ...state,
@@ -72,7 +75,6 @@ export default function(state = initialState, action) {
         ele => ele._id === action.payload._id
       )
       newProductUpdate.splice(productToUpdate, 1, action.payload)
-
       return {
         ...state,
         isLoading: false,
@@ -106,7 +108,6 @@ export default function(state = initialState, action) {
       const productToDelete = newProducts.findIndex(
         ele => ele._id === action.payload._id
       )
-
       newProducts.splice(productToDelete, 1)
       return {
         ...state,

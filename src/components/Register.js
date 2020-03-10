@@ -15,7 +15,6 @@ class Register extends Component {
               WELCOME TO THE REGISTER, COMPLETE THE FIELDS BELOW TO CREATE USER
             </h2>
           </div>
-
           <Formik
             initialValues={{ name: '', email: '', password: '', address: '' }}
             onSubmit={values => {
@@ -86,4 +85,8 @@ const mapStateToProps = state => ({
   isLoading: state.isLoading
 })
 
-export default connect(mapStateToProps, { postUser })(Register)
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ postUser }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register)

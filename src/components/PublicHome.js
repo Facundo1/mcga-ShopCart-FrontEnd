@@ -11,7 +11,6 @@ class PublicHome extends Component {
     return (
       <div className='container'>
         <h1>---Welcome to t-shirts store!---</h1>
-
         <div id='login2'>
           <div className='buttonmenu'>
             <Link to='/register'>Sign up</Link>

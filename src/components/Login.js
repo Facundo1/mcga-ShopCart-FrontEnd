@@ -12,6 +12,8 @@ class Login extends Component {
     super(props)
     this.getLogin = this.getLogin.bind(this)
   }
+
+  //COMPARE VALUES WITH DATABASE
   getLogin = values => {
     console.log(this.props)
     this.props.loginAccount(values).then(response => {
@@ -21,6 +23,7 @@ class Login extends Component {
       }
     })
   }
+
   render() {
     return (
       <div className='login-container'>

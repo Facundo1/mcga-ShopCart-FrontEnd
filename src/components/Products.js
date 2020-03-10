@@ -31,7 +31,6 @@ class Products extends Component {
         </div>
       </div>
     ))
-
     return <div className='row'>{productItems}</div>
   }
 }

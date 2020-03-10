@@ -13,7 +13,6 @@ class Routes extends Component {
       <BrowserRouter>
         <Switch>
           <PrivateRoute exact path='/home' component={Home} />
-
           <Route exact path='/catalog' component={PublicHome} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
@@ -23,6 +22,7 @@ class Routes extends Component {
     )
   }
 }
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}

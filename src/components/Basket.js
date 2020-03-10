@@ -14,7 +14,6 @@ class Basket extends Component {
         ) : (
           <div>you have {cartItems.length} products in the basket</div>
         )}
-
         {cartItems.length > 0 && (
           <div>
             <ul style={{ marginLeft: -25 }}>
