@@ -11,6 +11,7 @@ import {
   DELETE_PRODUCT_SUCCESS,
   DELETE_PRODUCT_ERROR,
   SET_SELECTED_PRODUCT_ID
+
 } from './types'
 import store from '../store'
 
@@ -104,7 +105,9 @@ export const updateProduct = product => {
       headers: {
         'Content-Type': 'application/json'
       },
+
       body: JSON.stringify({ ...product })
+
     }
 
     return fetch(`http://localhost:5000/api/product/${product._id}`, options)
@@ -117,7 +120,9 @@ export const updateProduct = product => {
 
         return dispatch({
           type: UPDATE_PRODUCT_SUCCESS,
+
           payload: product
+
         })
       })
       .catch(error => {
