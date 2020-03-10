@@ -56,13 +56,15 @@ export const postProduct = product => {
     dispatch({
       type: ADD_PRODUCT_PENDING
     })
-    const { token } = store.getState()
+    const {
+      users: { token }
+    } = store.getState()
     const options = {
       timeout: 25000,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        authorization: `BEARER ${token}`
+        Authorization: `BEARER ${token}`
       },
       body: JSON.stringify(product)
     }
@@ -99,11 +101,15 @@ export const updateProduct = product => {
       type: UPDATE_PRODUCT_PENDING
     })
 
+    const {
+      users: { token }
+    } = store.getState()
     const options = {
       timeout: 25000,
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: `BEARER ${token}`
       },
 
       body: JSON.stringify({ ...product })
@@ -151,11 +157,15 @@ export const deleteProduct = code => {
       type: DELETE_PRODUCT_PENDING
     })
 
+    const {
+      users: { token }
+    } = store.getState()
     const options = {
       timeout: 25000,
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: `BEARER ${token}`
       }
     }
 
