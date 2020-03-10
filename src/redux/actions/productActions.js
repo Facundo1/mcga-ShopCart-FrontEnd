@@ -13,10 +13,11 @@ import {
   SET_SELECTED_PRODUCT_ID
 } from './types'
 import store from '../store'
+const port = process.env.PORT || 5000
 
 //FETCH PRODUCTS
 export const fetchProducts = () => dispatch => {
-  fetch('http://localhost:5000/api/product')
+  fetch(`http://localhost:${port}/api/product`)
     .then(res => res.json())
     .then(data => {
       return dispatch({ type: FETCH_PRODUCTS, payload: data })
@@ -68,7 +69,7 @@ export const postProduct = product => {
       body: JSON.stringify(product)
     }
     console.log('options', options)
-    return fetch(`http://localhost:5000/api/product`, options)
+    return fetch(`http://localhost:${port}/api/product`, options)
       .then(res => res.json())
       .then(data => {
         console.log('POST PRODUCT', data)
@@ -110,7 +111,7 @@ export const updateProduct = product => {
       },
       body: JSON.stringify({ ...product })
     }
-    return fetch(`http://localhost:5000/api/product/${product._id}`, options)
+    return fetch(`http://localhost:${port}/api/product/${product._id}`, options)
       .then(res => res.json())
       .then(data => {
         console.log('UPDATE PRODUCT', data)
@@ -158,7 +159,7 @@ export const deleteProduct = code => {
         Authorization: `BEARER ${token}`
       }
     }
-    return fetch(`http://localhost:5000/api/product/${code}`, options)
+    return fetch(`http://localhost:${port}/api/product/${code}`, options)
       .then(res => res.json())
       .then(data => {
         console.log('DELETE PRODUCT', data)

@@ -9,6 +9,7 @@ import {
   ADD_USER_SUCCESS,
   ADD_USER_ERROR
 } from './types'
+const port = process.env.PORT || 5000
 
 //LOGIN USER ACCOUNT
 export const loginAccount = data => {
@@ -27,7 +28,7 @@ export const loginAccount = data => {
         password: document.getElementById('inputPassword').value
       })
     }
-    return fetch('http://localhost:5000/api/user/signIn', options)
+    return fetch(`http://localhost:${port}/api/user/signIn`, options)
       .then(res => res.json())
       .then(res => {
         if (res.msg !== 'Invalid Email or password') {
@@ -63,7 +64,7 @@ export const logOut = dispatch => {
 
 //GET USERS
 export const fetchUser = () => dispatch => {
-  fetch('http://localhost:5000/api/user/')
+  fetch(`http://localhost:${port}/api/user/`)
     .then(res => res.json())
     .then(data => {
       return dispatch({ type: FETCH_USERS, payload: data })
@@ -85,7 +86,7 @@ export const postUser = user => {
       body: JSON.stringify(user)
     }
     console.log('options', options)
-    return fetch(`http://localhost:5000/api/user`, options)
+    return fetch(`http://localhost:${port}/api/user`, options)
       .then(res => res.json())
       .then(data => {
         console.log('POST USER', data)
