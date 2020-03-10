@@ -17,7 +17,7 @@ const port = process.env.PORT || 5000
 
 //FETCH PRODUCTS
 export const fetchProducts = () => dispatch => {
-  fetch(`http://ecommerce-cart.herokuapp.com/api/product`)
+  fetch(`https://ecommerce-cart.herokuapp.com/api/product`)
     .then(res => res.json())
     .then(data => {
       return dispatch({ type: FETCH_PRODUCTS, payload: data })
@@ -69,7 +69,7 @@ export const postProduct = product => {
       body: JSON.stringify(product)
     }
     console.log('options', options)
-    return fetch(`http://ecommerce-cart.herokuapp.com/api/product`, options)
+    return fetch(`https://ecommerce-cart.herokuapp.com/api/product`, options)
       .then(res => res.json())
       .then(data => {
         console.log('POST PRODUCT', data)
@@ -112,7 +112,7 @@ export const updateProduct = product => {
       body: JSON.stringify({ ...product })
     }
     return fetch(
-      `http://ecommerce-cart.herokuapp.com/api/product/${product._id}`,
+      `https://ecommerce-cart.herokuapp.com/api/product/${product._id}`,
       options
     )
       .then(res => res.json())
@@ -163,7 +163,7 @@ export const deleteProduct = code => {
       }
     }
     return fetch(
-      `http://ecommerce-cart.herokuapp.com/api/product/${code}`,
+      `https://ecommerce-cart.herokuapp.com/api/product/${code}`,
       options
     )
       .then(res => res.json())
