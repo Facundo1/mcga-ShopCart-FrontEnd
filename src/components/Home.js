@@ -63,11 +63,11 @@ class Home extends Component {
                 }}
               >
                 {({ handleSubmit }) => (
-                  <Form
+                  <Form 
                     onSubmit={handleSubmit}
                     style={{
                       display: 'flex',
-                      flexDirection: 'row',
+                      flexDirection: 'column',
                       justifyContent: 'space-around',
                       marginTop: '20px',
                       border: '2px solid'
